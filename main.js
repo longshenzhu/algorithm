@@ -1,27 +1,18 @@
 var fn = require('./2.1');
-
+let [selection] = [fn.selection];
 
 (function main(){
-    console.log(fn);
-    var testArray = [];
-    sort(testArray);
-    show(testArray);
+
+    var test = [7,5,6,2,1,3,5,4,8,9];
+    sort(test);
+    show(test);
+    
 }());
 
-function sort(arrayData,sortFn){
-    var sortAlgorithm = sortFn;
+function sort(arrayData){
+    var sortAlgorithm = selection;
     //进行排序
-    return arrayData;
-}
-
-function exchange(arrayData,index1,index2){
-    var mid = arrayData[index1];
-    arrayData[index1] = arrayData[index2];
-    arrayData[index2] = mid;
-}
-
-function compare(small,mid){
-    return small < mid;
+    sortAlgorithm(arrayData);
 }
 
 function isSorted(arrayData){

@@ -27,18 +27,33 @@ function insertion(arrayData){
     }
 }
 
-//希尔排序2.3
+//希尔排序2.3  插入排序的进化：权衡了子数组的规模和有序性。
 function shell(arrayData){
+    //先分组、局部排序，再插入排序
+    let len = arrayData.length;
+    let h = 1;                          //确定h 序列
+    while(h< len){
+        h = 3*h + 1;                    //1、4、13、40、121、364 ...... 按照这个序列比较和交换元素
+    }
 
+    while(h>=1){
+        for (let i = h; i < len; i++) {
+            for (let j = i; j >= h && less(arrayData[j],arrayData[j-h]); j-=h) {                //按照h序列远距离比较和交换
+                exch(arrayData,j,j-h);  
+            }    
+        }
+        h = parseInt(h/3);              //h依次取 ......364、121、40、13、4、1;注意js中要取整
+    }
 }
 
 
 exports = module.exports = {
     selection,
-    insertion
+    insertion,
+    shell
 }
 
-
+//以下是个人实现初级版本
 //插入排序粗糙版：不便于理解，第二层嵌套多了很多无用循环操作
 function Myinsertion(arrayData){
     let len = arrayData.length;

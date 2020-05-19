@@ -1,5 +1,5 @@
 var fn = require('./2.1');
-let [selection] = [fn.selection];
+let [selection,insertion] = [fn.selection, fn.insertion];
 
 (function main(){
 
@@ -10,7 +10,8 @@ let [selection] = [fn.selection];
 }());
 
 function sort(arrayData){
-    var sortAlgorithm = selection;
+    // var sortAlgorithm = selection;   //选择排序
+    var sortAlgorithm = insertion;   //插入排序
     //进行排序
     sortAlgorithm(arrayData);
 }

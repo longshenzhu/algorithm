@@ -1,8 +1,8 @@
-var fn = require('./2.1');
-let [selection,insertion,shell] = [fn.selection, fn.insertion, fn.shell];
+let fn = require('./2.1');
+let mergeFn = require('./mergeSort');
+let [selection,insertion,shell, mergeSort] = [fn.selection, fn.insertion, fn.shell,mergeFn.mergeSort];
 
 (function main(){
-
     var test = [7,5,6,2,1,3,5,4,8,9];
     sort(test);
     show(test);
@@ -12,7 +12,8 @@ let [selection,insertion,shell] = [fn.selection, fn.insertion, fn.shell];
 function sort(arrayData){
     // var sortAlgorithm = selection;   //选择排序
     // var sortAlgorithm = insertion;   //插入排序
-    var sortAlgorithm = shell;          //希尔排序
+    // var sortAlgorithm = shell;          //希尔排序
+    var sortAlgorithm = mergeSort;
     //进行排序
     sortAlgorithm(arrayData);
 }

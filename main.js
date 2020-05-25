@@ -1,7 +1,8 @@
 let fn = require('./2.1');
 let mergeFn = require('./mergeSort');
 let quickFn = require('./quickSort');
-let [selection,insertion,shell, mergeSort,mergeSortBU, quickSort] = [fn.selection, fn.insertion, fn.shell,mergeFn.mergeSort, mergeFn.mergeSortBU, quickFn.quickSort];
+let heapSortFn = require('./heapSort');
+let [selection,insertion,shell, mergeSort,mergeSortBU, quickSort,heapSort] = [fn.selection, fn.insertion, fn.shell,mergeFn.mergeSort, mergeFn.mergeSortBU, quickFn.quickSort,heapSortFn.heapSort];
 
 (function main(){
     var test = [7,5,6,2,1,3,5,4,8,9];
@@ -18,7 +19,8 @@ function sort(arrayData){
     // var sortAlgorithm = mergeSort;
     // var sortAlgorithm = mergeSortBU;
 
-    var sortAlgorithm = quickSort;
+    // var sortAlgorithm = quickSort;
+    var sortAlgorithm = heapSort;
     
     //进行排序
     sortAlgorithm(arrayData);
